@@ -8,14 +8,15 @@ TagManager:
   - Item
   - Weapon
   - Melee
+  - Wall
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Player
   - Water
   - UI
-  - 
+  - Bullet
   - 
   - 
   - 

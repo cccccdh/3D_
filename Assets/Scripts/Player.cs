@@ -99,10 +99,9 @@ public class Player : MonoBehaviour
         swapDown3 = Input.GetButtonDown("Swap3");
     }
 
-    // 이동 함수
+    // 이동
     void Move()
     {
-        // 이동벡터를 1로 정규화
         moveVec = new Vector3(hAxis, 0, vAxis).normalized;
 
         if (isDodge) 
@@ -117,11 +116,13 @@ public class Player : MonoBehaviour
         anim.SetBool("IsWalk", wDown);
     }
 
+    // 회전
     void Turn()
     {
         transform.LookAt(transform.position + moveVec);
     }
 
+    // 점프
     void Jump()
     {
         if(jDown && moveVec == Vector3.zero && !isJump && !isDodge && !isSwap)
@@ -133,6 +134,7 @@ public class Player : MonoBehaviour
         }
     }
 
+    // 공격
     void Attack()
     {
         if (equipWeapon == null)
@@ -149,6 +151,7 @@ public class Player : MonoBehaviour
         }
     }
 
+    // 회피
     void Dodge()
     {
         if (jDown && moveVec != Vector3.zero && !isJump && !isDodge && !isSwap)
@@ -167,6 +170,7 @@ public class Player : MonoBehaviour
         isDodge = false;
     }
 
+    // 무기 교체
     void Swap()
     {
         if (swapDown1 && (!hasWeapons[0] || equipWeaponIndex == 0))
@@ -204,6 +208,7 @@ public class Player : MonoBehaviour
         isSwap = false;
     }
 
+    // 무기 획득
     void Interation()
     {
         if(iDown && nearObject != null && !isDodge && !isJump)

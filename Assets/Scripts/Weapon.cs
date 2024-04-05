@@ -55,6 +55,5 @@ public class Weapon : MonoBehaviour
         Vector3 caseVec = bulletCasePos.forward * Random.Range(-3, -2 ) + Vector3.up * Random.Range(2,3);
         caseRb.AddForce(caseVec, ForceMode.Impulse);
         caseRb.AddTorque(Vector3.up * 10, ForceMode.Impulse);
-
     }
 }
